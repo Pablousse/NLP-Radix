@@ -351,7 +351,7 @@ MigrationBackup/
 
 #Personnal ignore
 env
-# .flake8
-# .pre-commit-config.yaml
-# .vscode
-# .pytest_cache
+.flake8
+.pre-commit-config.yaml
+.vscode
+.pytest_cache
