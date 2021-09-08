@@ -27,4 +27,4 @@ def get_full_text(filename):
     return '\n'.join(full_text)
 
 
-print(get_full_text('../assets/1158.docx'))
+# print(get_full_text('../assets/1158.docx'))

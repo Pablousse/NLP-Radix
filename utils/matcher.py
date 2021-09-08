@@ -1,40 +1,31 @@
 import spacy
 from spacy.matcher import Matcher
+
 import read_docX
 
-_1 = read_docX.get_full_text('../assets/1.docx')
-# print(_1)
 nlp = spacy.load('en_core_web_sm')
-doc = nlp(_1)
-
 matcher = Matcher(nlp.vocab)
+
+
+def find_matches(text: str, pattern: list, pattern_name: str) -> list:
+    """generic function to find matching patterns in a given sample of text."""
+
+    doc = nlp(text)
+    matcher.add(pattern_name, [pattern])
+    matches = matcher(doc)
+    matcher.remove(pattern_name)
+    spans_found = [doc[start:end] for match_id, start, end in matches]
+    return spacy.util.filter_spans(spans_found)
+
+
 # "LENGTH": {">": 2}
-# {'POS': 'PROPN', 'ENT_TYPE': 'PERSON', 'TEXT': {'REGEX': '^[^.]+$'}},
-name_pattern = [{'POS': 'PROPN', 'ENT_TYPE': 'PERSON', 'TEXT': {'REGEX': '^[^.]+$'}}, {'POS': 'PROPN', 'ENT_TYPE': 'PERSON', 'OP': '+'}]
-matcher.add('NAME', [name_pattern])
-matches = matcher(doc)
-print([doc[start:end] for match_id, start, end in matches])
+name_pattern = [{'POS': 'PROPN', 'ENT_TYPE': 'PERSON', 'TEXT': {'REGEX': '^[^.]+$'}}, {'POS': 'PROPN', 'ENT_TYPE': 'PERSON', 'TEXT': {'REGEX': '^[^.]+$'}, 'OP': '+'}]
+# extended regex to match contry codes inside brackets, works slower
+# {'REGEX': '^\s*[-. (]*?(?:\+?(\d{1,3}))?[-. )]*?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$'}
+tel_pattern = [{'TEXT': {'REGEX': '^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$'}}]
 
-
-
-# meaningful_text = [sent.text for sent in doc.sents if sent.text != '\n']
-# print(meaningful_text)
-
-# _person = []
-# _tokens = [token.text for token in doc] # if token.text != '\n\n\n\n\n\n\n\n\n'
-# print(_tokens)
-"""
-for token in doc:
-    if token.ent_type_ == 'PERSON' and token
-
-
-for sent in doc.sents:
-    for token in sent:
-        if token.ent_type_ == 'PERSON':
-            if to
-            print(token.ent_type_, token.text) # , sent.text
-    # print(token.text, '\t', token.lemma_, '\t', token.pos_, '\t', token.dep_, '\t', token.ent_type_)  # token.head.text, '\t',
-    # if token.ent_type != 0: # 
-
-
-"""
+for i in range(1, 50):
+    print(f'reading docX #{i}')
+    text = read_docX.get_full_text(f'../assets/{i}.docx')
+    print(find_matches(text, name_pattern, 'name'))
+    print(find_matches(text, tel_pattern, 'tel'))
