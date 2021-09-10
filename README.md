@@ -1,5 +1,4 @@
 <!-- PROJECT TITLE -->
-<br />
 <p align="center">
   <h1 align="center">Resume parsing - Radix</h3>
 </p>
