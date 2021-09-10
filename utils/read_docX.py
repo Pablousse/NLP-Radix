@@ -1,12 +1,6 @@
-# remade from example code found at
-# https://automatetheboringstuff.com/2e/chapter15/
-# thank Jesus :)
-
-# import re
 import docx
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
-# working if run from utils folder
 
 def get_full_text(filename):
     doc = docx.Document(filename)
@@ -34,6 +28,3 @@ def get_full_text(filename):
                 full_text.append(cell.text)
 
     return '\n'.join(full_text)
-
-
-# print(get_full_text('../assets/1158.docx'))

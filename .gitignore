@@ -357,3 +357,4 @@ env
 .pytest_cache
 
 test
+assets
