@@ -1,11 +1,7 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-
 <!-- PROJECT TITLE -->
 <br />
 <p align="center">
-  <h3 align="center">Resume parsing - Radix</h3>
+  <h1 align="center">Resume parsing - Radix</h3>
 </p>
 <br />
 
@@ -68,12 +64,3 @@ Any contributions you make are **greatly appreciated**.
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
-https://github.com/Pablousse/NLP-Radix
-[contributors-shield]: https://img.shields.io/github/contributors/Pablousse/NLP-Radix.svg?style=for-the-badge
-[contributors-url]: https://github.com/Pablousse/NLP-Radix/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Pablousse/NLP-Radix.svg?style=for-the-badge
-[forks-url]: https://github.com/Pablousse/NLP-Radix/network/members
-[stars-shield]: https://img.shields.io/github/stars/Pablousse/NLP-Radix.svg?style=for-the-badge
-[stars-url]: https://github.com/Pablousse/NLP-Radix/stargazers
