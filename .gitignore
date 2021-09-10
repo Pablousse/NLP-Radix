@@ -355,3 +355,4 @@ env
 .pre-commit-config.yaml
 .vscode
 .pytest_cache
+assets
