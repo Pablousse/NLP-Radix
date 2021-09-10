@@ -8,12 +8,6 @@ matcher = Matcher(nlp.vocab)
 def find_matches(text: str, pattern: list, pattern_name: str) -> list:
     """
     generic function to find matching patterns in a given sample of text.
-    should only work in a script with following lines written beforehand:
-
-    import spacy\n
-    from spacy.matcher import Matcher\n
-    nlp = spacy.load('en_core_web_sm')\n
-    matcher = Matcher(nlp.vocab)
     """
     doc = nlp(text)
     matcher.add(pattern_name, [pattern])
