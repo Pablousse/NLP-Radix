@@ -45,6 +45,7 @@ The second part is to create a model that compare the different resumes (not imp
 2. Install dependencies
    ```sh
    pip install -r requirements.txt
+   python3 -m spacy download en_core_web_sm
    ``` 
 
 <!-- DATA SOURCES -->

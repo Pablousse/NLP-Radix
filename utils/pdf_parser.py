@@ -1,3 +1,4 @@
+from find_personal_info import find_personal_info
 import fitz
 import pandas as pd
 
@@ -95,3 +96,8 @@ def create_sections(pdf_dataframe: pd.DataFrame) -> pd.DataFrame:
     new_df_array.append([text, category])
 
     return pd.DataFrame(new_df_array, columns=["text", "category"])
+
+# df = create_sections(extract_info_from_pdf("assets/pdf/9.pdf"))
+# print(df[df["category"] == "personnal"].sum()["text"])
+
+# print(find_personal_info(df[df["category"] == "personnal"].sum()["text"]))
