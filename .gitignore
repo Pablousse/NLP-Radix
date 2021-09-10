@@ -357,4 +357,6 @@ env
 .pytest_cache
 
 test
-assets
+!assets
+assets/*
+!assets/*.jpeg
